@@ -4,7 +4,7 @@ public class Casual extends User{
 	double PayRate;
 	double Hours;
 	String Qualification;
-	String Role = "";
+	String Role;
 	
 	public void MakeRequestToChangeRole()
 	{

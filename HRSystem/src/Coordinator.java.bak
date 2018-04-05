@@ -6,7 +6,7 @@ public class Coordinator extends User{
 
 	}
 
-	private void RequestStaff()
+	private voidRequestStaff()
 	{
 
 	}
@@ -15,14 +15,9 @@ public class Coordinator extends User{
 	{
 
 	}
-
 	public void ChangeStartTimes()
 	{ 
 	
 	}
-
-	public void AddClass()
-	{
-		
-	}
++AddClass()
 }
