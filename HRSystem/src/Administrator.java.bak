@@ -6,7 +6,7 @@ public class Administrator extends User{
 		
 	}
 
-	private void AssignCourse()
+	public void AssignCourse()
 	{
 		System.out.println("ASSIGN COURSE METHOD");
 	}
