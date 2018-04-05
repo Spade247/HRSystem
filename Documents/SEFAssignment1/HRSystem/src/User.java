@@ -1,0 +1,14 @@
+
+public abstract class User {
+
+	String name = "";
+	String ID = "";
+	String phone = "";
+	char gender ;
+	
+	public void viewTimetable() {
+	
+	}
+	
+
+}
