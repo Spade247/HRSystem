@@ -3,7 +3,7 @@ public class Administrator extends User{
 
 	private void SetupSemester()
 	{
-		
+		System.out.println("Semester Setup");
 	}
 
 	public void AssignCourse()
