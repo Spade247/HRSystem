@@ -8,8 +8,6 @@ public class Casual extends User{
 	
 	public void MakeRequestToChangeRole()
 	{
-        System.out.print('The request has been made!');
+
 	}
-	
-	
 }

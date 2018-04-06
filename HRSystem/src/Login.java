@@ -10,9 +10,9 @@ public class Login {
 		password = pass;
 	}
 	
-	public String getUserName()
+	public void getUserName()
 		{
-			return userName;
+			System.out.println(userName);
 		}
 	
 	public String getPassword()

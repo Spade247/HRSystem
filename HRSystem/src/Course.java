@@ -2,6 +2,6 @@
 public class Course {
 	
 	String CourseName;
-	String CourseLecturer;
+	String[] CourseLecturers;
 	String[] CourseTutors;
 }
