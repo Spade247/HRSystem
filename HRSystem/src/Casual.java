@@ -9,6 +9,19 @@ public class Casual extends User{
 	
 	public void MakeRequestToChangeRole()
 	{
-
+          System.out.print('The request has been made!');
 	}
+	
+	public double calculatePayment()
+	{
+	Payment=PayRate*Hours;
+	}
+	
+	public String getQualification()
+	{
+	 return Qualification;	
+	}
+	
+	
+	
 }
