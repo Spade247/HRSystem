@@ -7,6 +7,8 @@ public abstract class User {
 	char gender ;
 	
 	public void viewTimetable() {
+		
+		System.out.println("View Timetable");
 	
 	}
 	

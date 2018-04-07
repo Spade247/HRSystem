@@ -1,0 +1,23 @@
+
+public class Coordinator extends User{
+
+	private void ViewCasualWorkers()
+	{
+
+	}
+
+	private voidRequestStaff()
+	{
+
+	}
+
+	private void RequestResources()
+	{
+
+	}
+	public void ChangeStartTimes()
+	{ 
+	
+	}
++AddClass()
+}

@@ -1,4 +1,3 @@
-
 public class Casual extends User{
 	
 	double PayRate;
@@ -9,12 +8,13 @@ public class Casual extends User{
 	
 	public void MakeRequestToChangeRole()
 	{
-          System.out.print('The request has been made!');
+          System.out.print("The request has been made!");
 	}
 	
 	public double calculatePayment()
 	{
-	Payment=PayRate*Hours;
+		Payment=PayRate*Hours;
+		return Payment;
 	}
 	
 	public String getQualification()
