@@ -6,6 +6,9 @@ public class HRSystemMain {
 		Administrator admin = new Administrator();
 
 		admin.AssignCourse();
+		 
+		Login logger = new Login("Yonas","Password");
+		logger.getUserName();
 	}
 
 }

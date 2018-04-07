@@ -1,0 +1,25 @@
+
+public class Administrator extends User {
+
+	private void SetupSemester()
+	{
+		
+	}
+
+	public void AssignCourse()
+	{
+		System.out.println("ASSIGN COURSE METHOD");
+	}
+
+	private void InputTimetable()
+	{
+
+	}
+
+	private void RetrieveReports()
+	{
+
+	}
+
+
+}
