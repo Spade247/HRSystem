@@ -1,5 +1,18 @@
 public class Casual extends User{
 	
+	String name = "";
+	String ID = "";
+	String phone = "";
+	String role = "";
+	char gender ;
+	public Casual(String name, String id, String phone,char gender, String role)
+	{
+		this.name =name;
+		this.ID=id;
+		this.phone=phone;
+		this.role=role;
+		this.gender=gender;
+	};
 	double PayRate;
 	double Hours;
 	double Payment;

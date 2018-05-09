@@ -1,17 +1,19 @@
-import java.util.*;
 
 public class Coordinator extends User{
 	
-	ArrayList<Class> classes = new ArrayList<Class>();
-
-	public Coordinator(String name, String id, String phone, char gender)
+	String name = "";
+	String ID = "";
+	String phone = "";
+	String role = "";
+	char gender ;
+	public Coordinator(String name, String id, String phone,char gender, String role)
 	{
-		name = this.name;
-		id = this.id;
-		phone = this.phone;
-		gender = this.gender;
-	}
-	
+		this.name =name;
+		this.ID=id;
+		this.phone=phone;
+		this.role=role;
+		this.gender=gender;
+	};
 	private void ViewCasualWorkers()
 	{
 
@@ -32,22 +34,12 @@ public class Coordinator extends User{
 	
 	}
 
-	public void AddClass(String name,String time, String date, String tutor, String tutorID)
+	public void AddClass()
 	{
-		classes.add(new Class(name, time, date, tutor, tutorID));
 		
 	}
-	
-	
-	public void showClasses()
+	public String getRole()
 	{
-		for(int i=0; i<classes.size();i++)
-		{
-		Class cls = (Class)classes.get(i);
-		cls.getClassName();
-		cls.getDateTime();
-		cls.getTutor();
-		}
-	
+		return this.role;
 	}
 }
