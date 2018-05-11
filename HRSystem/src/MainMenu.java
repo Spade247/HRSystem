@@ -43,7 +43,7 @@ public class MainMenu {
 			setMenu(user,role);
 			System.out.println("1) View Profile");
 			System.out.println("2) Apply for Position");
-			System.out.println("3) logout");
+			System.out.println("3) Logout");
 			System.out.println("5) View Casual Workers");
 			System.out.println("6) Request Staff");
 			System.out.println("7) Request Resources");
@@ -129,7 +129,7 @@ public class MainMenu {
 		    if(num > 18 || num == 0)
 		    	System.out.println("\nPlease enter a number that has been specified:");	
 		}
-		while (num == 0 || num > 17);
+		while (num == 0 || num > 18);
 		
 		if (num == 1)
 		{
@@ -198,13 +198,17 @@ public class MainMenu {
 		}
 		if(num == 17 && (role.equals("Admin") || role.equals("Approver") || role.equals("Casual")|| role.equals("Coordinator")))
 		{
-			System.out.println("\n17) Edit Profile ");
+			EditProfile();
 		}
 		if(num == 18 && (role.equals("Admin") || role.equals("Approver") ))
 		{
 			viewApprovalRequests();
 		}
-		
+		else
+		{
+			System.out.println("\nYOU DO NOT HAVE ACCESS TO PERFORM THIS TASK\n");
+			new MainMenu(this.user,this.user1);
+		}
 		
 		
 	}
@@ -365,10 +369,19 @@ public class MainMenu {
 		System.out.println("4) Back to Main Menu");
 		checkSelection(num);
 	}
+	public void EditProfile()
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %22.10s \tUser: %s\t *\n","EDIT",user);
+		System.out.printf("* %24.14s \tRole: %-11.11s*\n","PROFILE",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		checkSelection(num);
+	}
 	public void viewApprovalRequests()
 	{
 		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","VIEW",user);
+		System.out.printf("* %22.10s \tUser: %s\t *\n","VIEW",user);
 		System.out.printf("* %26.14s \tRole: %-11.11s*\n","ALL REQUESTS",role);
 		System.out.println("**************************************************");
 		System.out.println("4) Back to Main Menu");

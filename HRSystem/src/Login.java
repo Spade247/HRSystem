@@ -55,7 +55,8 @@ public class Login {
 	}
 	public void setCurrentUser(String userName)
 	{
-		for(int i=0;i < users.length;i++)
+		//CHANGE THIS I TO CHANGE THE ROLE OF THE USER METHOD DOES NOT WORK
+		for(int i=1;i < users.length;i++)
 		{
 			if(users[i].getUserName().equals(this.userName)  )
 			{
