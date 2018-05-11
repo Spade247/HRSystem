@@ -10,15 +10,16 @@ public class LoginPage {
 	{
 		
 		System.out.println("*************************************************");
-		System.out.println("*              Welcome to                       *");
-		System.out.println("*                RMIT                           *");
-		System.out.println("*              HR System                        *");
+		System.out.printf("* %25.10s \t\t\t*\n","Welcome To");
+		System.out.printf("* %22.10s \t\t\t*\n","RMIT");
+		System.out.printf("* %25.10s \t\t\t*\n","HR System");
 		System.out.println("*************************************************");
 		
 		Scanner scan= new Scanner(System.in);
 		
 		System.out.println("1) Login ");
 		System.out.println("2) Forgot Password");
+		System.out.println("3) Exit System");
 		
 		System.out.println("\nPlease enter a number for your selection:");
 		int num = 0;
@@ -32,18 +33,18 @@ public class LoginPage {
 		    {
 		        System.out.println("Integers only, please.");
 		        num = 0;
-		        break;
+		        new LoginPage();   
 		    }
-		    if(num > 2 || num == 0)
+		    if(num > 3 || num == 0)
 		    	System.out.println("\nPlease enter a number that has been specified:");	
 		}
-		while (num == 0 || num > 2);
+		while (num == 0 || num > 3);
 		
 		if(num == 1)
 		{
 			System.out.println("*************************************************");
-			System.out.println("*                LOGIN                          *");
-			System.out.println("*                 PAGE                          *");
+			System.out.printf("* %23.10s \t\t\t*\n","LOGIN");
+			System.out.printf("* %22.10s \t\t\t*\n","PAGE");
 			System.out.println("*************************************************");
 			
 			boolean status;
@@ -58,6 +59,7 @@ public class LoginPage {
 			Login logger= new Login();
 			
 			 status = logger.LoginAs(user,password);
+
 			 
 			 if(status == false)
 			 {
@@ -65,7 +67,8 @@ public class LoginPage {
 			 }
 			 else
 			 {
-				 System.out.println("Welcome "+user+"!");
+				 System.out.printf("%25.11s %-6.9s\n\n\n","***Welcome",user+"!***");
+				 												
 				 
 			 }
 			}
@@ -76,6 +79,11 @@ public class LoginPage {
 			System.out.println("Please contact service desk at +61 3 9925 0600 for assistance\n");
 			LoginPage log = new LoginPage();
 			this.user = log.getUserName();
+		}
+		else if (num == 3)
+		{
+			System.out.println("Thank You for using the RMIT HR System");
+			System.exit(0);
 		}
 	}
 		public String getUserName()

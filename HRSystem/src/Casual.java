@@ -1,10 +1,11 @@
 public class Casual extends User{
 	
-	String name = "";
-	String ID = "";
-	String phone = "";
-	String role = "";
-	char gender ;
+	
+	double PayRate;
+	double Hours;
+	double Payment;
+	String Qualification;
+	String Role = "";
 	public Casual(String name, String id, String phone,char gender, String role)
 	{
 		this.name =name;
@@ -13,12 +14,26 @@ public class Casual extends User{
 		this.role=role;
 		this.gender=gender;
 	};
-	double PayRate;
-	double Hours;
-	double Payment;
-	String Qualification;
-	String Role = "";
-	
+	public void setUserName(String un)
+	{
+		this.un = un;
+	}
+	public String getUserName()
+	{
+		return un;
+	}
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public String getRole()
+	{
+		return this.role;
+	}
 	public void MakeRequestToChangeRole()
 	{
           System.out.print("The request has been made!");

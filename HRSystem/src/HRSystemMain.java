@@ -2,16 +2,20 @@
 public class HRSystemMain {
 
 	public static void main(String[] args) {
+		User[] users = new User[10];
+		users[0]  = (Administrator) new Administrator ("Yonas Admin","Admin","123456789",'M',"Admin");
+		users[1]  = (Coordinator)new Coordinator ("Yonas COD","Coordinator","987654321",'M',"Coordinator");
+		users[2]  = (Casual)new Casual("Yonas CAS","Casual","000",'M',"Casual");
+		users[3]  = (Approver)new Approver("Yonas APP","Approver","0423717241",'M',"Approver");
+		Login login = new Login();
+		login.setUsers(users);
 		
-		Administrator admin = new Administrator ("Yonas S","Admin","000",'M',"Admin");
-		Coordinator cord = new Coordinator ("Yonas S","Coordinator","000",'M',"Coordinator");
-		Approver app = new Approver("Yonas S","Approver","000",'M',"Approver");
-		Casual cas =new Casual("Yonas S","Casual","000",'M',"Casual");
 		
 		LoginPage loginPage = new LoginPage();
+		User currentUser = login.getCurrentUser();
 		String un = loginPage.getUserName();
-		String role = app.getRole();
-		MainMenu menu = new MainMenu(un,role);
+		MainMenu menu = new MainMenu(un,currentUser);
+		
 		
 		
 		

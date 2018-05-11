@@ -1,6 +1,7 @@
 
 public class Approver extends User{
 	
+	
 	public Approver(String name, String id, String phone,char gender, String role)
 	{
 		this.name =name;
@@ -11,13 +12,28 @@ public class Approver extends User{
 	};
 	
 	String statusOfRequest ;
-
+	
+	public void setUserName(String un)
+	{
+		this.un = un;
+	}
+	public String getUserName()
+	{
+		return un;
+	}
 	private void ApproveStaffRequest(Request requestMade)
 	{
 		statusOfRequest = "Approved";
 		
 	}
-	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	public String getName()
+	{
+		return name;
+	}
 	private void declineStaffRequest(Request requestMade)
 	{
 		statusOfRequest = "Declined";
