@@ -8,23 +8,9 @@ public class Login {
 	String [] arrUserName = {"Admin","COD","CAS","APP"};
 	String [] arrPass = 	{"123"  ,"123","123","123"};
 	
-	
-//	public void getUserDetails(User[] users)
-//	{
-//		boolean status = false;
-//		
-//		for(int i =0 ; i < users.length;i++)
-//		{
-//			if()
-//		}
-//		return status;
-//	}
-	
 	public void setUsers(User[] users)
 	{
 		this.users = users;
-		
-		
 	}
 	public boolean LoginAs(String user, String pass)
 	{
@@ -55,12 +41,12 @@ public class Login {
 	}
 	public void setCurrentUser(String userName)
 	{
-		//CHANGE THIS I TO CHANGE THE ROLE OF THE USER METHOD DOES NOT WORK
-		for(int i=1;i < users.length;i++)
+		//CHANGE i TO CHANGE THE ROLE OF THE USER METHOD DOES NOT WORK
+		for(int i=0;i < users.length;i++)
 		{
 			if(users[i].getUserName().equals(this.userName)  )
 			{
-				System.out.println("Users["+i+"]: "+users[i].getUserName());
+				
 				currentUser = users[i];
 				break;
 			}

@@ -56,6 +56,7 @@ public class MainMenu {
 			System.out.println("14) Assign Course ");
 			System.out.println("15) Input Timetable ");
 			System.out.println("16) Retreive Reports ");
+			System.out.println("0) Exit System");
 		
 			
 			checkSelection(num);
@@ -73,6 +74,7 @@ public class MainMenu {
 			System.out.println("7) Request Resources");
 			System.out.println("8) Change Start Time For Classes");
 			System.out.println("9) Add Class");
+			System.out.println("0) Exit System");
 			
 			//System.out.println("\nPlease enter a number for your selection:");
 			checkSelection(num);
@@ -84,6 +86,7 @@ public class MainMenu {
 			System.out.println("2) Apply for Position");
 			System.out.println("3) Logout");
 			System.out.println("10) Make Request to Change Role ");
+			System.out.println("0) Exit System");
 			
 			checkSelection(num);
 		}
@@ -96,6 +99,8 @@ public class MainMenu {
 			System.out.println("11) Approve Staff Requests");
 			System.out.println("12) Approve Time Stamps ");
 			System.out.println("17) View All Pending Requests");
+			System.out.println("0) Exit System");
+
 			
 			checkSelection(num);
 		}
@@ -123,21 +128,26 @@ public class MainMenu {
 		    catch (InputMismatchException exception)
 		    {
 		        System.out.println("Integers only, please!.\n");
-		        num = 0;
+		        num =0;
 		        new MainMenu(user,user1);
 		    }
-		    if(num > 18 || num == 0)
+		    if(num > 18 || num < 0)
 		    	System.out.println("\nPlease enter a number that has been specified:");	
 		}
-		while (num == 0 || num > 18);
-		
+		while (num < 0 || num > 18);
+		if(num == 0)
+		{
+			exitSystem();
+		}
 		if (num == 1)
 		{
-			viewProfile();
+			user1.viewProfile(user,role);
+			checkSelection(num);
 		}
 		if (num == 2)
 		{
-			applyPosition();
+			user1.applyPosition(user,role);
+			checkSelection(num);
 		}
 		
 		if (num == 3)
@@ -150,59 +160,73 @@ public class MainMenu {
 		}
 		if(num == 5 && (role.equals("Admin") || role.equals("Coordinator") ))
 		{
-			ViewCasualWorkers();
+			user1.ViewCasualWorkers(user,role);
+			checkSelection(num);
 		}
 		if(num == 6 && (role.equals("Admin") || role.equals("Coordinator") ))
 		{
-			RequestStaff();
+			user1.RequestStaff(user,role);
+			checkSelection(num);
 		}
 		if(num == 7 && (role.equals("Admin") || role.equals("Coordinator") ))
 		{
-			RequestResources();
+			user1.RequestResources(user,role);
+			checkSelection(num);
 		}
 		if(num == 8 && (role.equals("Admin") || role.equals("Coordinator") ))
 		{
-			ChangeStartTimes();
+			user1.ChangeStartTimes(user,role);
+			checkSelection(num);
 		}
 		if(num == 9 && (role.equals("Admin") || role.equals("Coordinator") ))
 		{
-			AddClass();
+			user1.AddClass(user,role);
+			checkSelection(num);
 		}
 		if(num == 10 && (role.equals("Admin") || role.equals("Casual") ))
 		{
-			MakeRequestToChangeRole();
+			user1.MakeRequestToChangeRole(user,role);
+			checkSelection(num);
 		}
 		if(num == 11 && (role.equals("Admin") || role.equals("Approver") ))
 		{
-			ApproveStaffRequest();
+			user1.ApproveStaffRequest(user,role);
+			checkSelection(num);
 		}
 		if(num == 12 && (role.equals("Admin") || role.equals("Approver") ))
 		{
-			ApproveTimeStamps();
+			user1.ApproveTimeStamps(user,role);
+			checkSelection(num);
 		}
 		if(num == 13 && role.equals("Admin"))
 		{
-			SetupSemester();
+			user1.SetupSemester(user,role);
+			checkSelection(num);
 		}
 		if(num == 14 && role.equals("Admin") )
 		{
-			AssignCourse();
+			user1.AssignCourse(user,role);
+			checkSelection(num);
 		}
 		if(num == 15 && role.equals("Admin") )
 		{
-			InputTimetable();
+			user1.InputTimetable(user,role);
+			checkSelection(num);
 		}
 		if(num == 16 && role.equals("Admin") )
 		{
-			RetrieveReports();
+			user1.RetrieveReports(user,role);
+			checkSelection(num);
 		}
 		if(num == 17 && (role.equals("Admin") || role.equals("Approver") || role.equals("Casual")|| role.equals("Coordinator")))
 		{
-			EditProfile();
+			user1.EditProfile(user,role);
+			checkSelection(num);
 		}
 		if(num == 18 && (role.equals("Admin") || role.equals("Approver") ))
 		{
-			viewApprovalRequests();
+			user1.viewApprovalRequests(user,role);
+			checkSelection(num);
 		}
 		else
 		{
@@ -220,171 +244,18 @@ public class MainMenu {
 	{
 		this.role=role;
 	}
-	public void viewProfile()
-	{
-		
-		System.out.println("**************************************************");
-		System.out.printf("*%24.10s \tUser: %s\t *\n","PROFILE",user);
-		System.out.printf("* %24.10s \tRole: %-11.11s*\n","SETTINGS",role);
-		System.out.println("**************************************************");
-		System.out.printf("Name: %-20.20s Role: %-20.20s \n",name,role);
-		System.out.printf("ID: %-20.20s UserName: %-20.20s \n",ID,user);
-		System.out.printf("Phone: %-20.20s Gender: %-20.20s \n",phone,gender);
-		System.out.println("\n17) Edit Profile ");
-		System.out.println("4) Back to Main Menu");
-		
-		checkSelection(num);
-		
-	}
-	public void applyPosition()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("*  %24.10s \tUser: %s\t *\n","APPLY FOR",user);
-		System.out.printf("* %24.10s \tRole: %-11.11s*\n","POSITION",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
 	public void logout()
 	{
 		System.out.println("You have successfully logged out!\n");
 		new HRSystemMain().main(null);
 		//System.exit(0);
 	}
-	public void ViewCasualWorkers()
+	public void exitSystem()
 	{
-		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","CASUAL",user);
-		System.out.printf("* %24.14s \tRole: %-11.11s*\n","WORKERS",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
-	public void RequestStaff()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","REQUEST",user);
-		System.out.printf("* %23.14s \tRole: %-11.11s*\n","STAFF",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
-	public void RequestResources()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","REQUEST",user);
-		System.out.printf("* %25.14s \tRole: %-11.11s*\n","RESOURCES",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
-	public void ChangeStartTimes()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","START",user);
-		System.out.printf("* %24.14s \tRole: %-11.11s*\n","TIMES",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
-	public void AddClass()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","ADD",user);
-		System.out.printf("* %26.10s \tRole: %-11.11s*\n","CLASSES",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
-	public void MakeRequestToChangeRole()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","CHANGE",user);
-		System.out.printf("* %23.14s \tRole: %-11.11s*\n","ROLE",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
-	public void ApproveStaffRequest()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","APPROVE",user);
-		System.out.printf("* %26.14s \tRole: %-11.11s*\n","STAFF REQUESTS",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
+		System.out.println("\n\t***SYSTEM EXITED!***");
+		System.out.println("Thank You for using the RMIT HR System");
+		System.exit(0);
 		
 	}
-	public void ApproveTimeStamps()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","APPROVE",user);
-		System.out.printf("* %26.14s \tRole: %-11.11s*\n","TIME STAMPS",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
-	public void SetupSemester()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","SETUP",user);
-		System.out.printf("* %26.14s \tRole: %-11.11s*\n","SEMESTER",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
-	public void setupSemester()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","SETUP",user);
-		System.out.printf("* %24.10s \tRole: %-11.11s*\n","SEMESTER",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
-	public void AssignCourse()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","ASSIGN",user);
-		System.out.printf("* %24.14s \tRole: %-11.11s*\n","COURSE",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
-	public void InputTimetable()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","INPUT",user);
-		System.out.printf("* %26.14s \tRole: %-11.11s*\n","TIMETABLE",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
-	public void RetrieveReports()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %24.10s \tUser: %s\t *\n","GENERAL",user);
-		System.out.printf("* %24.14s \tRole: %-11.11s*\n","REPORTS",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
-	public void EditProfile()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %22.10s \tUser: %s\t *\n","EDIT",user);
-		System.out.printf("* %24.14s \tRole: %-11.11s*\n","PROFILE",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
-	public void viewApprovalRequests()
-	{
-		System.out.println("**************************************************");
-		System.out.printf("* %22.10s \tUser: %s\t *\n","VIEW",user);
-		System.out.printf("* %26.14s \tRole: %-11.11s*\n","ALL REQUESTS",role);
-		System.out.println("**************************************************");
-		System.out.println("4) Back to Main Menu");
-		checkSelection(num);
-	}
+	
 }

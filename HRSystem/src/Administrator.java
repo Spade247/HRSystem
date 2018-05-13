@@ -1,7 +1,6 @@
 
 public class Administrator extends User {
 	
-	
 	public Administrator(String name, String id, String phone, char gender,String role)
 	{
 		 this.name = name;
@@ -10,57 +9,218 @@ public class Administrator extends User {
 		 this.gender = gender;
 		 this.role=role;
 	}
+	@Override
 	public String getRole()
 	{
 		return this.role;
 	}
+	@Override
 	public void setUserName(String un)
 	{
 		this.un = un;
 	}
+	@Override
 	public void setName(String name)
 	{
 		this.name = name;
 	}
+	@Override
 	public String getName()
 	{
 		return name;
 	}
+	@Override
 	public String getID()
 	{
 		return ID;
 	}
+	@Override
 	public String getPhone()
 	{
 		return phone;
 	}
+	@Override
 	public char getGender()
 	{
 		return gender;
 	}
-	
+	@Override
 	public String getUserName()
 	{
 		return un;
 	}
-	private void SetupSemester()
+	public void viewProfile(String user, String role)
 	{
 		
+		System.out.println("**************************************************");
+		System.out.printf("*%24.10s \tUser: %s\t *\n","PROFILE",user);
+		System.out.printf("* %24.10s \tRole: %-11.11s*\n","SETTINGS",role);
+		System.out.println("**************************************************");
+		System.out.printf("Name: %-20.20s Role: %-20.20s \n",name,role);
+		System.out.printf("ID: %-20.20s UserName: %-20.20s \n",ID,user);
+		System.out.printf("Phone: %-20.20s Gender: %-20.20s \n",phone,gender);
+		System.out.println("\n17) Edit Profile ");
+		System.out.println("4) Back to Main Menu");
+		
+		
 	}
-
-	public void AssignCourse()
+	public void applyPosition(String user, String role)
 	{
-		System.out.println("ASSIGN COURSE METHOD");
+		System.out.println("**************************************************");
+		System.out.printf("*  %24.10s \tUser: %s\t *\n","APPLY FOR",user);
+		System.out.printf("* %24.10s \tRole: %-11.11s*\n","POSITION",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
 	}
-
-	private void InputTimetable()
+	public void ViewCasualWorkers(String user, String role)
 	{
-
+		System.out.println("**************************************************");
+		System.out.printf("* %24.10s \tUser: %s\t *\n","CASUAL",user);
+		System.out.printf("* %24.14s \tRole: %-11.11s*\n","WORKERS",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
 	}
-
-	private void RetrieveReports()
+	public void RequestStaff(String user, String role)
 	{
-
+		System.out.println("**************************************************");
+		System.out.printf("* %24.10s \tUser: %s\t *\n","REQUEST",user);
+		System.out.printf("* %23.14s \tRole: %-11.11s*\n","STAFF",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
+	}
+	public void RequestResources(String user, String role)
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %24.10s \tUser: %s\t *\n","REQUEST",user);
+		System.out.printf("* %25.14s \tRole: %-11.11s*\n","RESOURCES",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
+	}
+	public void ChangeStartTimes(String user, String role)
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %24.10s \tUser: %s\t *\n","START",user);
+		System.out.printf("* %24.14s \tRole: %-11.11s*\n","TIMES",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
+	}
+	public void AddClass(String user, String role)
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %24.10s \tUser: %s\t *\n","ADD",user);
+		System.out.printf("* %26.10s \tRole: %-11.11s*\n","CLASSES",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
+	}
+	public void MakeRequestToChangeRole(String user, String role)
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %24.10s \tUser: %s\t *\n","CHANGE",user);
+		System.out.printf("* %23.14s \tRole: %-11.11s*\n","ROLE",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
+	}
+	public void ApproveStaffRequest(String user, String role)
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %24.10s \tUser: %s\t *\n","APPROVE",user);
+		System.out.printf("* %26.14s \tRole: %-11.11s*\n","STAFF REQUESTS",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
+		
+	}
+	public void ApproveTimeStamps(String user, String role)
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %24.10s \tUser: %s\t *\n","APPROVE",user);
+		System.out.printf("* %26.14s \tRole: %-11.11s*\n","TIME STAMPS",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
+	}
+	public void SetupSemester(String user, String role)
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %24.10s \tUser: %s\t *\n","SETUP",user);
+		System.out.printf("* %26.14s \tRole: %-11.11s*\n","SEMESTER",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
+	}
+	public void setupSemester(String user, String role)
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %24.10s \tUser: %s\t *\n","SETUP",user);
+		System.out.printf("* %24.10s \tRole: %-11.11s*\n","SEMESTER",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
+	}
+	public void AssignCourse(String user, String role)
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %24.10s \tUser: %s\t *\n","ASSIGN",user);
+		System.out.printf("* %24.14s \tRole: %-11.11s*\n","COURSE",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
+	}
+	public void InputTimetable(String user, String role)
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %24.10s \tUser: %s\t *\n","INPUT",user);
+		System.out.printf("* %26.14s \tRole: %-11.11s*\n","TIMETABLE",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
+	}
+	public void RetrieveReports(String user, String role)
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %24.10s \tUser: %s\t *\n","GENERAL",user);
+		System.out.printf("* %24.14s \tRole: %-11.11s*\n","REPORTS",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
+	}
+	public void EditProfile(String user, String role)
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %22.10s \tUser: %s\t *\n","EDIT",user);
+		System.out.printf("* %24.14s \tRole: %-11.11s*\n","PROFILE",role);
+		System.out.println("**************************************************");
+		System.out.print("Your current Name: "+name+".\nPlease enter your new name : ");
+		name=scan.nextLine();
+		System.out.print("\nYour current ID: "+ID+".\nPlease enter your new ID : ");
+		ID=scan.nextLine();
+		System.out.print("\nYour current Phone: "+phone+".\nPlease enter your new Phone : ");
+		phone=scan.nextLine();
+		System.out.print("\nYour current Role: "+role+".\nPlease enter your new Role : ");
+		role=scan.nextLine();
+		System.out.print("\nYour current Gender: "+gender+".\nPlease enter your new Gender : ");
+		gender=scan.next().charAt(0);
+		
+		System.out.println("\n\t***SUCESSFULLY CHANGED DETAILS!***\n");
+		
+		System.out.println("4) Back to Main Menu");
+		
+	}
+	public void viewApprovalRequests(String user, String role)
+	{
+		System.out.println("**************************************************");
+		System.out.printf("* %22.10s \tUser: %s\t *\n","VIEW",user);
+		System.out.printf("* %26.14s \tRole: %-11.11s*\n","ALL REQUESTS",role);
+		System.out.println("**************************************************");
+		System.out.println("4) Back to Main Menu");
+		
 	}
 
 
