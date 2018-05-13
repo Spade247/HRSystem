@@ -197,7 +197,7 @@ public class Administrator extends User {
 		System.out.printf("* %22.10s \tUser: %s\t *\n","EDIT",user);
 		System.out.printf("* %24.14s \tRole: %-11.11s*\n","PROFILE",role);
 		System.out.println("**************************************************");
-		System.out.print("Your current Name: "+name+".\nPlease enter your new name : ");
+		System.out.print("Your current Name: "+name+".\nPlease enter your new Name : ");
 		name=scan.nextLine();
 		System.out.print("\nYour current ID: "+ID+".\nPlease enter your new ID : ");
 		ID=scan.nextLine();

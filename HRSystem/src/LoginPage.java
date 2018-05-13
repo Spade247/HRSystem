@@ -5,7 +5,8 @@ public class LoginPage {
 	
 	private String user = "";
 	private String password = "";
-
+	private String role ="";
+	Scanner scan;
 	public LoginPage()
 	{
 		
@@ -15,7 +16,7 @@ public class LoginPage {
 		System.out.printf("* %25.10s \t\t\t*\n","HR System");
 		System.out.println("*************************************************");
 		
-		Scanner scan= new Scanner(System.in);
+		 scan = new Scanner(System.in);
 		
 		System.out.println("1) Login ");
 		System.out.println("2) Forgot Password");
@@ -59,6 +60,7 @@ public class LoginPage {
 			Login logger= new Login();
 			
 			 status = logger.LoginAs(user,password);
+			 role = getRole();
 
 			 
 			 if(status == false)
@@ -90,7 +92,10 @@ public class LoginPage {
 		{
 			return this.user;
 		}
-	
+		public String getRole()
+		{
+			return this.role;
+		}
 	public String getPassword()
 		{
 			return password;

@@ -92,10 +92,6 @@ public abstract class User {
 	{
 		
 	}
-	public void setupSemester(String user, String role)
-	{
-		
-	}
 	public void AssignCourse(String user, String role)
 	{
 		

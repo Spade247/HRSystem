@@ -16,16 +16,6 @@ public class HRSystemMain {
 		String un = loginPage.getUserName();
 		MainMenu menu = new MainMenu(un,currentUser);
 		
-		
-		
-		
-		
-		
-//		admin.AssignCourse();
-//		admin.viewTimetable();
-		 
-//		Login logger = new Login("Yonas","Password");
-//		logger.getUserName();
 	}
 
 }

@@ -149,7 +149,6 @@ public class MainMenu {
 			user1.applyPosition(user,role);
 			checkSelection(num);
 		}
-		
 		if (num == 3)
 		{
 			logout();
